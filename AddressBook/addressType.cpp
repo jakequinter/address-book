@@ -18,11 +18,24 @@ addressType::addressType(string _streetAddress, string _city, string _state, str
 
 void addressType::setAddress(string _streetAddress, string _city, string _state, string _zip)
 {
-    streetAddress = "14";
+    streetAddress = _streetAddress;
+    city = _city;
+    state = _state;
+    zip = _zip;
+}
+
+void addressType::getAddress(string &_streetAddress, string &_city, string &_state, string &_zip)
+{
+    _streetAddress = streetAddress;
+    _city = city;
+    _state = state;
+    _zip = zip;
 }
 
 void addressType::print()
 {
-    cout << "Street Address: " << streetAddress << "\n";
+//    cout << "**************************************\n";
+    cout << streetAddress << ", " << city << ", " << state << " " << zip << "\n";
+//    cout << "**************************************\n\n";
 }
 

@@ -15,26 +15,27 @@
 #include <string>
 
 
-class extPersonType
+class extPersonType : personType
 {
 public:
-    extPersonType(string firstName = "", string lastName = "", int month = 1,
-                  int day = 1, int year = 1900, string street = "",
-                  string city = "", string state = "", string zip = "",
-                  string phone = "", string status = "");
-    void printInfo();
-    void setInfo(string firstName, string lastName, int month, int day, int year, string street, string city, string state, string zip, string phone, string status);
-    void setInfo(string firstName, string lastName, dateType dob, addressType address, string phone, string status);
-    bool isLastName(string lastName);
+    extPersonType(string _firstName = "", string _lastName = "", int _month = 1,
+                  int _day = 1, int _year = 1900, string _streetAddress = "",
+                  string _city = "", string _state = "", string _zip = "",
+                  string _phoneNumber = "", string _status = "");
+    void setInfo(string _firstName, string _lastName, int _month, int _day, int _year, string _streetAddress, string _city, string _state, string _zip, string _phoneNumber, string _status);
+    void setInfo(string _firstName, string _lastName, dateType _dob, addressType _streetAddress, string _phoneNumber, string _status);
+    bool isLastName(string _lastName);
     void getLastName(string &_lastName);
-    void getAddress(string &_address, string &_city, string &_state, string &_zip);
+    void getAddress(string &_streetAddress, string &_city, string &_state, string &_zip);
+    void getPhoneNumber(string &_phoneNumber);
     void getStatus(string &_status);
-    void getPhoneNumber(string &_phone);
-    bool isStatus(string status);
+    bool isStatus(string _status);
     void getDOB(int &_month, int &_day, int &_year);
     bool isMonth(int month);
+    void printInfo();
     
 private:
+//    personType person;
     addressType address;
     dateType dob;
     string status;

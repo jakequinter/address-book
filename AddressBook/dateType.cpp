@@ -63,7 +63,7 @@ void dateType::setDate(int month, int day, int year)
     }
 }
 
-void dateType::getDate(int& month, int& day, int& year)
+void dateType::getDate(int &month, int &day, int &year)
 {
     month = dMonth;
     day = dDay;
