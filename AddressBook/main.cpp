@@ -7,8 +7,19 @@
 
 #include <iostream>
 
+using namespace std;
+
+#include "info.h"
+#include "addressType.h"
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    
+    // info
+    info myInfo;
+    myInfo.identify("Week 3: Address Book");
+    
+    // addressType test
+    addressType testAddress("123 North Water St.", "Boston", "MA", "01121");
+    testAddress.print();
+    
 }
