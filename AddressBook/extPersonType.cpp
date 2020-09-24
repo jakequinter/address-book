@@ -14,7 +14,7 @@ using namespace std;
 extPersonType::extPersonType(string _firstName, string _lastName, int _month, int _day, int _year, string _streetAddress,
                              string _city, string _state, string _zip, string _phoneNumber, string _status)
 {
-    // @TODO: need to set firstName & lastName
+    setName(_firstName, _lastName);
     address.setAddress(_streetAddress, _city, _state, _zip);
     dob.setDate(_month, _day, _year);
     status = _status;
@@ -24,31 +24,34 @@ extPersonType::extPersonType(string _firstName, string _lastName, int _month, in
 void extPersonType::setInfo(string _firstName, string _lastName, int _month, int _day, int _year, string _streetAddress,
                             string _city, string _state, string _zip, string _phoneNumber, string _status)
 {
-    // @TODO: need to set firstName & lastName
+    setName(_firstName, _lastName);
     address.setAddress(_streetAddress, _city, _state, _zip);
     dob.setDate(_month, _day, _year);
     status = _status;
     phoneNumber = _phoneNumber;
 }
 
-void extPersonType::setInfo(string _firstName, string _lastName, dateType _dob, addressType _streetAddress, string _phoneNumber, string _status)
+void extPersonType::setInfo(string _firstName, string _lastName, dateType _dob, addressType _address, string _phoneNumber, string _status)
 {
-    // @TODO: need to set firstName & lastName
-    // @TODO: need to set DOB
-    // @TODO: need to set address
+    setName(_firstName, _lastName);
+    dob = _dob;
+    address = _address;
     phoneNumber = _phoneNumber;
     status = _status;
 }
 
-//bool extPersonType::isLastName(string _lastName)
-//{
-//
-//}
+bool extPersonType::isLastName(string _lastName)
+{
+    if (lastName == _lastName)
+        return true;
+    else
+        return false;
+}
 
-//void extPersonType::getLastName(string &_lastName)
-//{
-//
-//}
+void extPersonType::getLastName(string &_lastName)
+{
+    _lastName = lastName;
+}
 
 void extPersonType::getAddress(string &_streetAddress, string &_city, string &_state, string &_zip)
 {
@@ -78,17 +81,22 @@ void extPersonType::getDOB(int &_month, int &_day, int &_year)
     dob.getDate(_month, _day, _year);
 }
 
-//bool extPersonType::isMonth(int month)
-//{
-//
-//}
+bool extPersonType::isMonth(int _month)
+{
+    int dMonth = dob.getMonth();
+    if (_month == dMonth)
+        return true;
+    else
+        return false;
+}
 
 void extPersonType::printInfo()
 {
+    cout << "Name:    " << firstName << " " << lastName << "\n";
     cout << "Address: ";
     address.print();
-    cout << "DOB: ";
+    cout << "DOB:     ";
     dob.printDate();
-    cout << "\nStatus: " << status << "\n";
-    cout << "Phone Number: " << phoneNumber << "\n\n";
+    cout << "\nPhone:   " << phoneNumber << "\n";
+    cout << "Status:  " << status << "\n\n";
 }

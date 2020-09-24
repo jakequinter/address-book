@@ -75,6 +75,11 @@ void dateType::printDate() const
     cout << dMonth << "-" << dDay << "-" << dYear;
 }
 
+int dateType::getMonth()
+{
+    return dMonth;
+}
+
 dateType::dateType(int month, int day, int year) //constructor with parameter
 {
     setDate(month, day, year);

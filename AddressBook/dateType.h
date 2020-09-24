@@ -14,10 +14,11 @@ public:
     void setDate(int month, int day, int year);
     void getDate(int &month, int &day, int &year);
     void printDate() const;
+    int getMonth();
     dateType(int month = 1, int day = 1, int year = 1900);
 
 
-private:
+protected:
     bool isLeapYear(int y);
     int dMonth;
     int dDay;

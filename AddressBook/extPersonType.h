@@ -23,7 +23,7 @@ public:
                   string _city = "", string _state = "", string _zip = "",
                   string _phoneNumber = "", string _status = "");
     void setInfo(string _firstName, string _lastName, int _month, int _day, int _year, string _streetAddress, string _city, string _state, string _zip, string _phoneNumber, string _status);
-    void setInfo(string _firstName, string _lastName, dateType _dob, addressType _streetAddress, string _phoneNumber, string _status);
+    void setInfo(string _firstName, string _lastName, dateType _dob, addressType _address, string _phoneNumber, string _status);
     bool isLastName(string _lastName);
     void getLastName(string &_lastName);
     void getAddress(string &_streetAddress, string &_city, string &_state, string &_zip);
@@ -31,17 +31,14 @@ public:
     void getStatus(string &_status);
     bool isStatus(string _status);
     void getDOB(int &_month, int &_day, int &_year);
-    bool isMonth(int month);
+    bool isMonth(int _month);
     void printInfo();
     
 private:
-//    personType person;
     addressType address;
     dateType dob;
     string status;
     string phoneNumber;
-    
-    
 };
 
 #endif

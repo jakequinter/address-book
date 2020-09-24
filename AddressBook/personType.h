@@ -21,7 +21,7 @@ public:
     personType(string first, string last);
     personType();
 
- private:
+ protected:
     string firstName;
     string lastName;
 };
