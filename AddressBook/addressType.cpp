@@ -32,7 +32,7 @@ void addressType::getAddress(string &_streetAddress, string &_city, string &_sta
     _zip = zip;
 }
 
-void addressType::print()
+void addressType::print() const
 {
 //    cout << "**************************************\n";
     cout << streetAddress << ", " << city << ", " << state << " " << zip << "\n";

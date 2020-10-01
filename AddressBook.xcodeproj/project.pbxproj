@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B72D5156251E79130033F0BF /* addressBookType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B72D5154251E79130033F0BF /* addressBookType.cpp */; };
 		B76FB62A251A88740016B650 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB629251A88740016B650 /* main.cpp */; };
 		B76FB633251A88AD0016B650 /* info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB631251A88AD0016B650 /* info.cpp */; };
 		B76FB638251A893D0016B650 /* personType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB636251A893D0016B650 /* personType.cpp */; };
@@ -28,6 +29,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B72D5154251E79130033F0BF /* addressBookType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = addressBookType.cpp; sourceTree = "<group>"; };
+		B72D5155251E79130033F0BF /* addressBookType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addressBookType.h; sourceTree = "<group>"; };
+		B76E38702522A6AD00018FA7 /* arrayListType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayListType.h; sourceTree = "<group>"; };
 		B76FB626251A88740016B650 /* AddressBook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AddressBook; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76FB629251A88740016B650 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B76FB631251A88AD0016B650 /* info.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = info.cpp; sourceTree = "<group>"; };
@@ -83,6 +87,9 @@
 				B76FB641251A8A4E0016B650 /* extPersonType.h */,
 				B76FB644251A8A670016B650 /* addressType.cpp */,
 				B76FB645251A8A670016B650 /* addressType.h */,
+				B72D5154251E79130033F0BF /* addressBookType.cpp */,
+				B72D5155251E79130033F0BF /* addressBookType.h */,
+				B76E38702522A6AD00018FA7 /* arrayListType.h */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 				B76FB62A251A88740016B650 /* main.cpp in Sources */,
 				B76FB642251A8A4E0016B650 /* extPersonType.cpp in Sources */,
 				B76FB633251A88AD0016B650 /* info.cpp in Sources */,
+				B72D5156251E79130033F0BF /* addressBookType.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

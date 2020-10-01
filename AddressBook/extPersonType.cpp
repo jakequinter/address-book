@@ -90,7 +90,7 @@ bool extPersonType::isMonth(int _month)
         return false;
 }
 
-void extPersonType::printInfo()
+void extPersonType::print() const
 {
     cout << "Name:    " << firstName << " " << lastName << "\n";
     cout << "Address: ";

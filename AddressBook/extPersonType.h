@@ -15,7 +15,7 @@
 #include <string>
 
 
-class extPersonType : personType
+class extPersonType : public personType
 {
 public:
     extPersonType(string _firstName = "", string _lastName = "", int _month = 1,
@@ -32,7 +32,7 @@ public:
     bool isStatus(string _status);
     void getDOB(int &_month, int &_day, int &_year);
     bool isMonth(int _month);
-    void printInfo();
+    void print() const override;
     
 private:
     addressType address;

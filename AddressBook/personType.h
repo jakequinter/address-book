@@ -15,7 +15,7 @@ using namespace std;
 class personType
 {
 public:
-    void print() const;
+    virtual void print() const;
     void setName(string first, string last);
     void getName(string &first, string &last);
     personType(string first, string last);

@@ -26,7 +26,7 @@ void info::identify(string assignmentName)
   cout << "Course:         " << course << "\n";
   cout << "Instructor:     " << instructor << "\n";
   cout << "Developer:      " << developer << "\n";
-  cout << "Developer:      " << assignmentName << "\n";
+  cout << "Assignment:     " << assignmentName << "\n";
   cout << "**************************************\n\n";
 }
 

@@ -5,140 +5,161 @@
 //  Created by Jake Quinter on 9/22/20.
 //
 
-#include <iostream>
+#include "info.h"
+//#include "extPersonType.h"
+#include "addressBookType.h"
+
+//#include <iostream>
+//#include <fstream>
+
+//using namespace std;
+
 
 using namespace std;
 
-#include "info.h"
-#include "extPersonType.h"
+void showMenu();
+void determineUserInput(int input, addressBookType addBookType);
 
 int main(int argc, const char * argv[]) {
     
     // info
     info myInfo;
-    myInfo.identify("Week 3: Address Book");
+    myInfo.identify("Week 4: Address Book");
     
+    // address book code
+    addressBookType addBookType;
+    int result = addBookType.loadAddressBook("/Users/jakequinter/Desktop/Ch3_Ex9Data.txt");
+    int userChoice = 0;
     
+    if (result == -1) {
+        cout << "Error: Could not read file.";
+        return 0;
+    }
     
-    // addressType tests
-    // addressType constructor test
-    addressType addressTypeConstructor("123 N Water St.", "Boston", "MA", "02212");
-    cout << "********** addressType Tests *********\n";
-    addressTypeConstructor.print();
-    
-    
-    
-    // addressType.setAddress test
-    addressType setAddressTest;
-    setAddressTest.setAddress("456 North Ave.", "Nashville", "TN", "00000");
-    setAddressTest.print();
-    
-    
-    
-    // addressType.getAddress test
-    string streetAddress, city, state, zip;
-    
-    addressType testAddress("789 S Main St.", "Appleton", "WI", "54915");
-    testAddress.getAddress(streetAddress, city, state, zip);
-    
-    cout << streetAddress << ", " << city << ", " << state << " " << zip << "\n";
-    cout << "**************************************\n\n";
-    
-    
-    
-    // extPersonType tests
-    // extPersonType constructor test
-    extPersonType extPersonTypeConstructorTest("Jake", "Quinter", 12, 27, 1992, "123 Test St.", "Boston", "MA", "02212", "920-123-4567", "Friend");
-    cout << "********* extPersonType Tests ********\n";
-    extPersonTypeConstructorTest.printInfo();
-    
-    
-    
-    // extPersonType setInfo test
-    extPersonType setInfo1Test;
-    setInfo1Test.setInfo("Ethan", "Smith", 5, 14, 2015, "E 456 St.", "San Diego", "CA", "91091", "019-283-7465", "Friend");
-    setInfo1Test.printInfo();
-    
-    
-    
-    // extPersonType setInfo test
-    dateType dob = dateType(8, 21, 1991);
-    addressType address = addressType("987 Worm Rd.", "Oshkosh", "WI", "04290");
-    extPersonType setInfoTest2;
-    setInfoTest2.setInfo("Matt", "James", dob, address, "123-867-5309", "Friend");
-    setInfoTest2.printInfo();
-    
-    
-    
-    // extPersonType getAddress test
-    string extstreetAddress, extcity, extstate, extzip;
-    
-    extPersonType getAddressTest("Test", "Address", 1, 1, 2000, "Testing Address", "Test", "Address", "00000", "920-999-8888", "Family");
-    getAddressTest.getAddress(extstreetAddress, extcity, extstate, extzip);
-    
-    cout << "Address Test: " << endl;
-    cout << extstreetAddress << ", " << extcity << ", " << extstate << " " << extzip << "\n\n";
-    
-    
-    
-    // extPersonType getLastName test
-    string lastName;
-    
-    extPersonType getLastNameTest("Jon", "Jones", 1, 27, 1990, "123 Test St.", "Boston", "MA", "02212", "920-123-4567", "Friend");
-    getLastNameTest.getLastName(lastName);
-    
-    cout << "getLastNameTest:        " << lastName << "\n";
-    
-    
-    
-    // extPersonType getPhoneNumber test
-    string phoneNumber;
-    
-    extPersonType getPhoneNumberTest("Test", "Phone", 1, 1, 2000, "Testing Phone", "Test", "Phone", "00000", "920-999-8888", "Family");
-    getPhoneNumberTest.getPhoneNumber(phoneNumber);
-    
-    cout << "Phone Test:             " << phoneNumber << "\n";
-    
-
-    
-    // extPersonType.getStatus test
-    string status;
-    
-    extPersonType getStatusTest("Test", "Status", 2, 2, 2002, "Testing Status", "Test", "Status", "11111", "111-222-3333", "Family");
-    getStatusTest.getStatus(status);
-    
-    cout << "Status Test:            " << status << "\n";
-    
-    
-    
-    // extPersonType getDOB test
-    int month, day, year;
-    
-    extPersonType getDOBTest("Test", "DOB", 3, 3, 2003, "Testing DOB", "Test", "DOB", "22222", "222-333-4444", "Family");
-    getDOBTest.getDOB(month, day, year);
-    cout << "DOB Test:               " << month << "-" << day << "-" << year << "\n";
-    
-    
-    
-    // extPersonType isLastName test
-    extPersonType isLastNameTest("Last Name", "Quinter", 12, 27, 1992, "123 Test St.", "Boston", "MA", "02212", "920-123-4567", "Friend");
-    cout << "isLastName Test (pass): " << isLastNameTest.isLastName("Quinter") << "\n";
-    cout << "isLastName Test (fail): " << isLastNameTest.isLastName("Jake") << "\n";
-    
-    
-    
-    // extPersonType isStatus test
-    extPersonType isStatusTest("Test", "Status", 2, 2, 2002, "Testing Status", "Test", "Status", "11111", "111-222-3333", "Family");
-    
-    cout << "isStatus Test (pass):   " << isStatusTest.isStatus("Family") << "\n";
-    cout << "isStatus Test (fail):   " << isStatusTest.isStatus("test") << "\n";
-    
-    
-    
-    // extPersonType isMonth test
-    extPersonType isMonthTest("Month", "Test", 10, 10, 2010, "Testing Month", "Test", "DOB", "22222", "222-333-4444", "Family");
-    cout << "Month Test (pass):      " << isMonthTest.isMonth(10) << "\n";
-    cout << "Month Test (fail):      " << isMonthTest.isMonth(9) << "\n";
-    cout << "**************************************\n\n";
-    
+    while (userChoice != 9) {
+        showMenu();
+        cout << "\nYour Choice: ";
+        cin >> userChoice;
+        cout << endl;
+        
+        // process user input here
+        determineUserInput(userChoice, addBookType);
+    }
 }
+
+void showMenu() {
+    cout << "**************************************\n";
+    cout << "Welcome to the Address Book program\n" << endl;
+    cout << "Please choose from the following options to get started:\n";
+    cout << "\t1: To see if a person is in the address book\n";
+    cout << "\t2: Print the information of a person\n";
+    cout << "\t3: Print the names of a person having a birthday in a particular month\n";
+    cout << "\t4: Print the names of persons between two last names\n";
+    cout << "\t5: Print the names of persons having a particular status\n";
+    cout << "\t6: Print the address book\n";
+    cout << "\t7: Print a person at a particular index\n";
+    cout << "\t9: Terminate the program\n";
+}
+
+void determineUserInput(int input, addressBookType addBookType) {
+    switch (input) {
+        case 1: {
+            string lastName;
+            cout << "Please enter a last name: ";
+            cin  >> lastName;
+            cout << endl;
+            
+            int result;
+            result = addBookType.search(lastName);
+            
+            if (result != -1)
+                cout << lastName << " was found in the address book\n\n";
+            else
+                cout << lastName << " was not found in the address book\n\n";
+            break;
+        }
+        case 2: {
+            string lastName;
+            cout << "Please enter a last name: ";
+            cin  >> lastName;
+            cout << endl;
+            
+            int result;
+            result = addBookType.search(lastName);
+            
+            if (result != -1)
+               addBookType.printInfoOf(lastName);
+            else
+                cout << lastName << " was not found in the address book\n\n";
+            break;
+        }
+        // find all people with the same birth month
+        case 3: {
+            int month;
+            cout << "Please enter a month: ";
+            cin >> month;
+            cout << endl;
+            
+            addBookType.printNameInTheMonth(month);
+            break;
+        }
+        // print the names of the persons between 2 last names
+        case 4: {
+            string lastNameStart;
+            cout << "Please enter a starting last name: ";
+            cin >> lastNameStart;
+            
+            string lastNameEnd;
+            cout << "Please enter a ending last name: ";
+            cin >> lastNameEnd;
+            cout << endl;
+            
+            int startResult;
+            startResult = addBookType.search(lastNameStart);
+            
+            int endResult;
+            endResult = addBookType.search(lastNameEnd);
+            
+            if (startResult != -1 && endResult != -1) {
+                if (lastNameStart == lastNameEnd) {
+                    cout << "Error: Please enter two separate last names\n\n";
+                } else {
+                    addBookType.printNamesBetweenLastNames(lastNameStart, lastNameEnd);
+                }
+            }
+            else
+                cout << "One or both of the last names could not be found in the address book\n\n";
+            break;
+        }
+        // find all people with the same status
+        case 5: {
+            string status;
+            cout << "Please enter a status (Family, Friend, Business): ";
+            cin  >> status;
+            cout << endl;
+            
+            addBookType.printNamesWithStatus(status);
+            break;
+        }
+        case 6:
+            addBookType.print();
+            break;
+        // print the person information at a particular index
+        case 7:
+        {
+            int index;
+            cout << "Please enter an index: ";
+            cin  >> index;
+            cout << endl;
+            
+            addBookType.printAt(index);
+            break;
+        }
+        case 9:
+            cout << "Goodbye!\n\n";
+            break;
+        default:
+            cout << "Please enter a number 1-9 from the listing above\n\n";
+    }
+}
+
