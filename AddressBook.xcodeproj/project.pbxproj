@@ -14,6 +14,7 @@
 		B76FB63D251A89B60016B650 /* dateType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB63B251A89B60016B650 /* dateType.cpp */; };
 		B76FB642251A8A4E0016B650 /* extPersonType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB640251A8A4E0016B650 /* extPersonType.cpp */; };
 		B76FB646251A8A670016B650 /* addressType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76FB644251A8A670016B650 /* addressType.cpp */; };
+		B7C3E86025262D6800377714 /* userInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C3E85E25262D6800377714 /* userInterface.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,8 @@
 		B76FB641251A8A4E0016B650 /* extPersonType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = extPersonType.h; sourceTree = "<group>"; };
 		B76FB644251A8A670016B650 /* addressType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = addressType.cpp; sourceTree = "<group>"; };
 		B76FB645251A8A670016B650 /* addressType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addressType.h; sourceTree = "<group>"; };
+		B7C3E85E25262D6800377714 /* userInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = userInterface.cpp; sourceTree = "<group>"; };
+		B7C3E85F25262D6800377714 /* userInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				B72D5154251E79130033F0BF /* addressBookType.cpp */,
 				B72D5155251E79130033F0BF /* addressBookType.h */,
 				B76E38702522A6AD00018FA7 /* arrayListType.h */,
+				B7C3E85E25262D6800377714 /* userInterface.cpp */,
+				B7C3E85F25262D6800377714 /* userInterface.h */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			files = (
 				B76FB638251A893D0016B650 /* personType.cpp in Sources */,
 				B76FB63D251A89B60016B650 /* dateType.cpp in Sources */,
+				B7C3E86025262D6800377714 /* userInterface.cpp in Sources */,
 				B76FB646251A8A670016B650 /* addressType.cpp in Sources */,
 				B76FB62A251A88740016B650 /* main.cpp in Sources */,
 				B76FB642251A8A4E0016B650 /* extPersonType.cpp in Sources */,

@@ -8,6 +8,7 @@
 #include "info.h"
 //#include "extPersonType.h"
 #include "addressBookType.h"
+#include "userInterface.h"
 
 //#include <iostream>
 //#include <fstream>
@@ -17,7 +18,7 @@
 
 using namespace std;
 
-void showMenu();
+//void showMenu();
 void determineUserInput(int input, addressBookType addBookType);
 
 int main(int argc, const char * argv[]) {
@@ -28,6 +29,8 @@ int main(int argc, const char * argv[]) {
     
     // address book code
     addressBookType addBookType;
+    userInterface userInterface;
+    
     int result = addBookType.loadAddressBook("/Users/jakequinter/Desktop/Ch3_Ex9Data.txt");
     int userChoice = 0;
     
@@ -37,7 +40,7 @@ int main(int argc, const char * argv[]) {
     }
     
     while (userChoice != 9) {
-        showMenu();
+        userInterface.showMenu();
         cout << "\nYour Choice: ";
         cin >> userChoice;
         cout << endl;
@@ -47,19 +50,19 @@ int main(int argc, const char * argv[]) {
     }
 }
 
-void showMenu() {
-    cout << "**************************************\n";
-    cout << "Welcome to the Address Book program\n" << endl;
-    cout << "Please choose from the following options to get started:\n";
-    cout << "\t1: To see if a person is in the address book\n";
-    cout << "\t2: Print the information of a person\n";
-    cout << "\t3: Print the names of a person having a birthday in a particular month\n";
-    cout << "\t4: Print the names of persons between two last names\n";
-    cout << "\t5: Print the names of persons having a particular status\n";
-    cout << "\t6: Print the address book\n";
-    cout << "\t7: Print a person at a particular index\n";
-    cout << "\t9: Terminate the program\n";
-}
+//void showMenu() {
+//    cout << "**************************************\n";
+//    cout << "Welcome to the Address Book program\n" << endl;
+//    cout << "Please choose from the following options to get started:\n";
+//    cout << "\t1: To see if a person is in the address book\n";
+//    cout << "\t2: Print the information of a person\n";
+//    cout << "\t3: Print the names of a person having a birthday in a particular month\n";
+//    cout << "\t4: Print the names of persons between two last names\n";
+//    cout << "\t5: Print the names of persons having a particular status\n";
+//    cout << "\t6: Print the address book\n";
+//    cout << "\t7: Print a person at a particular index\n";
+//    cout << "\t9: Terminate the program\n";
+//}
 
 void determineUserInput(int input, addressBookType addBookType) {
     switch (input) {
