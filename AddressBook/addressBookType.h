@@ -11,9 +11,6 @@
 #include "arrayListType.h"
 #include "extPersonType.h"
 
-#include <string>
-using namespace std;
-
 class addressBookType : public arrayListType<extPersonType>
 {
 public:
@@ -27,7 +24,6 @@ public:
 //    void saveData(ofstream&);
     void printAt(int i);
     void print() const;
-    
 };
 
 #endif

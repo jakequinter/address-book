@@ -8,12 +8,13 @@
 #ifndef userInterface_h
 #define userInterface_h
 
-#include <stdio.h>
+#include "addressBookType.h"
 
 class userInterface
 {
 public:
     void showMenu();
+    void determineUserInput(int input, addressBookType addBookType);
 };
 
 #endif 

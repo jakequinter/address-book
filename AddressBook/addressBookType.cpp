@@ -24,12 +24,8 @@ int addressBookType::loadAddressBook(string path)
     extPersonType tempPerson;
     
     ifstream infile;
-    string _path;
     
-    _path = "/Users/jakequinter/Desktop/Ch3_Ex9Data.txt";
-    _path = path;
-    
-    infile.open(_path);
+    infile.open(path);
     
     if(!infile) {
         cout << "File does not exist." << endl;
@@ -124,13 +120,16 @@ void addressBookType::printNamesBetweenLastNames(string last1, string last2)
 {
     for (int i = 0; i < length; i++) {
         if (list[i].isLastName(last1)) {
-            int start = i;
-            for (int j = start + 1; j < length; j++) {
-                if (list[j].isLastName(last2))
+            for (int j = i; j < length; j++) { // if you don't want to include starting person use j = i + 1
+                if (list[j].isLastName(last2)) {
+                    list[j].personType::print(); // remove if you don't want to include last person
+                    cout << endl;
                     break;
-                else
+                }
+                else {
                     list[j].personType::print();
                     cout << endl;
+                }
             }
         }
     }

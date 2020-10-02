@@ -12,8 +12,6 @@
 #include "addressType.h"
 #include "dateType.h"
 
-#include <string>
-
 
 class extPersonType : public personType
 {
@@ -22,8 +20,11 @@ public:
                   int _day = 1, int _year = 1900, string _streetAddress = "",
                   string _city = "", string _state = "", string _zip = "",
                   string _phoneNumber = "", string _status = "");
-    void setInfo(string _firstName, string _lastName, int _month, int _day, int _year, string _streetAddress, string _city, string _state, string _zip, string _phoneNumber, string _status);
-    void setInfo(string _firstName, string _lastName, dateType _dob, addressType _address, string _phoneNumber, string _status);
+    void setInfo(string _firstName, string _lastName, int _month, int _day, int _year,
+                 string _streetAddress, string _city, string _state, string _zip,
+                 string _phoneNumber, string _status);
+    void setInfo(string _firstName, string _lastName, dateType _dob, addressType _address,
+                 string _phoneNumber, string _status);
     bool isLastName(string _lastName);
     void getLastName(string &_lastName);
     void getAddress(string &_streetAddress, string &_city, string &_state, string &_zip);
